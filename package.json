@@ -1,6 +1,36 @@
 {
+  "name": "spreadsheetdb",
+  "description": "Google apps script でspreadsheetをデータベースとして扱うためのライブラリ",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KentaTsujii/SpreadSheetDB.git"
+  },
+  "author": "TsujiiKenta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KentaTsujii/SpreadSheetDB/issues"
+  },
+  "homepage": "https://github.com/KentaTsujii/SpreadSheetDB#readme",
   "dependencies": {
+    "drivefileutils": "github:KentaTsujii/DriveFileUtils"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-typescript": "^7.22.15",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-commonjs": "^25.0.4",
     "@types/google-apps-script": "^1.0.67",
+    "rollup": "^3.29.1",
     "typescript": "^5.2.2"
   }
 }
