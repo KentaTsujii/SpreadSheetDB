@@ -1,10 +1,12 @@
+import {create_database, get_database} from '../src/index'
+
 function spreadsheet_db_create_test(){
-  let db = SpreadSheetDB.create_database("test_db");
+  let db = create_database("test_db");
   db.create_table("test_table", "id","name", "address", "age");
 }
 
 function spreadsheet_db_insert_test(){
-  let db = SpreadSheetDB.get_database("test_db");
+  let db = get_database("test_db");
   let table = db.get_table("test_table");
   let insert_data = {
       'id': 1,
@@ -29,7 +31,7 @@ function spreadsheet_db_insert_test(){
 }
 
 function spreadsheet_db_update_test() {
-  let db = SpreadSheetDB.get_database("test_db");
+  let db = get_database("test_db");
   let table = db.get_table("test_table");
   table.delete();
   let insert_data = {
@@ -62,7 +64,7 @@ function spreadsheet_db_update_test() {
 }
 
 function spreadsheet_db_delete_test() {
-  let db = SpreadSheetDB.get_database("test_db");
+  let db = get_database("test_db");
   let table = db.get_table("test_table");
   table.delete();
   let insert_data = {
@@ -87,6 +89,6 @@ function spreadsheet_db_delete_test() {
 }
 
 function spreadsheet_db_test_after() {
-  let db = SpreadSheetDB.get_database("test_db");
+  let db = get_database("test_db");
   db.drop();
 }
