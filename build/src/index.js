@@ -91,10 +91,11 @@ var SpreadSheetTable = /** @class */ (function () {
         }
         var last_col = this.sheet.getLastColumn();
         var header = this.sheet.getRange(1, 2, 1, last_col - 1).getValues();
-        for (var d in data) {
+        for (var _a = 0, data_1 = data; _a < data_1.length; _a++) {
+            var d = data_1[_a];
             var var_args = ["=row()"]; //行番号を特定するためのカラムを追加しておく
-            for (var _a = 0, _b = header[0]; _a < _b.length; _a++) {
-                var col = _b[_a];
+            for (var _b = 0, _c = header[0]; _b < _c.length; _b++) {
+                var col = _c[_b];
                 var_args.push(d[col] == null ? "" : d[col]);
             }
             this.sheet.appendRow(var_args);

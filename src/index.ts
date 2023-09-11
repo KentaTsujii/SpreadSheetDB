@@ -94,7 +94,7 @@ export class SpreadSheetTable {
   insert(...data: {[name: string]: any}[]) {
     const last_col = this.sheet.getLastColumn();
     const header = this.sheet.getRange(1, 2, 1, last_col - 1).getValues();
-    for(let d in data){
+    for(let d of data){
         let var_args = ["=row()"]; //行番号を特定するためのカラムを追加しておく
         for(let col of header[0]){
           var_args.push(d[col]==null?"":d[col]);
