@@ -163,7 +163,7 @@ var SpreadSheetTable = /** @class */ (function () {
                 var tmp_range = this.sheet.getRange(row[0], 2, 1, last_col - 1);
                 var updated_data = tmp_range.getValues();
                 console.log(updated_data);
-                for (var col = 0; col < update_data[0].length; col++) {
+                for (var col = 0; col < update_data.length; col++) {
                     updated_data[0][col] = update_data[col] || updated_data[0][col];
                 }
                 console.log(updated_data);

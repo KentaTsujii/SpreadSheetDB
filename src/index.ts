@@ -171,7 +171,7 @@ export class SpreadSheetTable {
         const tmp_range = this.sheet.getRange(row[0], 2, 1, last_col - 1);
         let updated_data = tmp_range.getValues();
         console.log(updated_data);
-        for (let col=0; col < update_data[0].length; col++) {
+        for (let col=0; col < update_data.length; col++) {
           updated_data[0][col] = update_data[col] || updated_data[0][col];
         }
         console.log(updated_data);
