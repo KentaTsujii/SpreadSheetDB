@@ -115,7 +115,7 @@ export class SpreadSheetTable {
 
     for(let col_num = 0; col_num < header[0].length; col_num ++) {
       const column_letter = this.column_to_letter(col_num + 1);
-      const replace_target_regex = `(?<=(\\s|,))${header[0][col_num]}(?=([=,]|\\s|$))`;
+      const replace_target_regex = `(?<=(\\s|,))${header[0][col_num]}(?=([=,]|\\s|!=|$))`;
       raw_query = raw_query.replace(new RegExp(replace_target_regex, 'gi'), column_letter);
     }
 

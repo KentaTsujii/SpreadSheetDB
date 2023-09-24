@@ -113,7 +113,7 @@ var SpreadSheetTable = /** @class */ (function () {
         var raw_query = query || "";
         for (var col_num = 0; col_num < header[0].length; col_num++) {
             var column_letter = this.column_to_letter(col_num + 1);
-            var replace_target_regex = "(?<=(\\s|,))".concat(header[0][col_num], "(?=([=,]|\\s|$))");
+            var replace_target_regex = "(?<=(\\s|,))".concat(header[0][col_num], "(?=([=,]|\\s|!=|$))");
             raw_query = raw_query.replace(new RegExp(replace_target_regex, 'gi'), column_letter);
         }
         var query_func = Utilities.formatString('=QUERY(%s!A:%s, "%s")', this.sheet.getSheetName(), this.column_to_letter(last_col), raw_query || "");
